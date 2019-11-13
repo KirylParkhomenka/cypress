@@ -14,7 +14,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
-                sh 'yarn cypress run'
+                sh 'yarn cy:run'
             }
         }
     }
