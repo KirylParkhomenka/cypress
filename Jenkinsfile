@@ -9,7 +9,7 @@ pipeline {
                     export PATH=/usr/local/bin
                     npm install -g yarn
                     yarn install
-                    yarn cypress run
+                    yarn cypress run --browser chrome
                 '''
             }
         }
