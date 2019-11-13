@@ -3,19 +3,12 @@ pipeline {
     tools {nodejs "node"}
 
     stages {
-        stage ('Build') {
+        stage ('Test') {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
                     npm install -g yarn
                     yarn install
-                '''
-            }
-        }
-
-        stage ('Test') {
-            steps {
-                sh '''
                     yarn cypress run
                 '''
             }
