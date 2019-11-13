@@ -7,9 +7,9 @@ pipeline {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
-                    npm install yarn
+                    npm install -g yarn
                     yarn install
-                    yarn run cy:run
+                    yarn cypress run
                 '''
             }
         }
