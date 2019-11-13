@@ -15,6 +15,7 @@ pipeline {
         }
         stage ('Test') {
             steps {
+                sh 'export PATH=/usr/local/bin'
                 sh 'yarn cypress run'
             }
         }
