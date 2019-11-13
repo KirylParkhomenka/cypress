@@ -8,13 +8,13 @@ pipeline {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
-                    yarn install
+                    npm install
                 '''
             }
         }
         stage ('Test') {
             steps {
-                sh 'yarn run cy:run'
+                sh 'npm run cy:run'
             }
         }
     }
