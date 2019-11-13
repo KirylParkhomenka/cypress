@@ -9,6 +9,13 @@ pipeline {
                     export PATH=/usr/local/bin
                     npm install -g yarn
                     yarn install
+                '''
+            }
+        }
+
+        stage ('Test') {
+            steps {
+                sh '''
                     yarn cypress run
                 '''
             }
