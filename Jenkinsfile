@@ -7,7 +7,7 @@ pipeline {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
-                    npm install -g yarn
+                    npm install yarn
                     yarn install
                     yarn run cy:run
                 '''
