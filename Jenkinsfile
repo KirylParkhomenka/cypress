@@ -8,13 +8,14 @@ pipeline {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
-                    npm install
+                    npm install -g yarn
+                    yarn install
                 '''
             }
         }
         stage ('Test') {
             steps {
-                sh 'npm run cy:run'
+                sh 'yarn cypress run'
             }
         }
     }
