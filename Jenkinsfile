@@ -25,7 +25,10 @@ pipeline {
 
     post {
         always {
-            sh 'yarn run junit-merge'
+            sh '''
+                yarn install
+                yarn run junit-merge
+            '''
             junit 'results/cypress-report.xml'
         }
     }
