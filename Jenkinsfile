@@ -3,14 +3,20 @@ pipeline {
     tools {nodejs "node"}
 
     stages {
+        stage ('Setup') {
+            steps {
+                dir ('results') {
+                    deleteDir()
+                }
+            }
+        }
+
         stage ('Test') {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
                     npm install -g yarn
                     yarn install
-                    pwd
-                    rm -rf results/
                     yarn cypress run -b chrome
                     yarn run junit-merge
                 '''
