@@ -18,7 +18,6 @@ pipeline {
                     npm install -g yarn
                     yarn install
                     yarn cypress run -b chrome
-                    yarn run junit-merge
                 '''
             }
         }
@@ -26,6 +25,7 @@ pipeline {
 
     post {
         always {
+            sh 'yarn run junit-merge'
             junit 'results/cypress-report.xml'
         }
     }
