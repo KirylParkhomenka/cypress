@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
-                    npm install -g yarn
+                    npm install yarn
                     yarn install
                     yarn cypress run -b chrome || true
                     yarn run junit-merge
