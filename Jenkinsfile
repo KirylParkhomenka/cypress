@@ -18,7 +18,6 @@ pipeline {
                     npm install -g yarn
                     yarn install
                     yarn cypress run -b chrome || true
-                    yarn run junit-merge
                 '''
             }
         }
