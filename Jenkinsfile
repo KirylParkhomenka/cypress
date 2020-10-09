@@ -14,8 +14,10 @@ pipeline {
         stage ('Test') {
             steps {
                 sh 'export PATH=/usr/local/bin'
-                sh 'npm install'
-                sh 'npx cypress run --browser chrome || true'
+                sh 'npm install -g yarn'
+                sh 'yarn installe'
+                sh 'yarn cypress run -b chrome || true'
+                sh 'yarn run junit-merge'
             }
         }
     }
