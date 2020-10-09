@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --browser chrome",
     "cy:run-chrome": "cypress run -b chrome",
     "cy:open": "cypress open",
     "junit-merge": "junit-merge -d results -o results/cypress-report.xml"
