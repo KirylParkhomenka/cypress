@@ -2,22 +2,12 @@ pipeline {
     agent any
     tools {nodejs "node"}
 
-    stages {
-        stage ('Setup') {
-            steps {
-                dir ('results') {
-                    deleteDir()
-                }
-            }
-        }
-
         stage ('Test') {
             steps {
-                sh '''
-                    export PATH=/usr/local/bin
-                    npm install
-                    npx cypress run --browser chrome || true
-                '''
+                sh 'export PATH=/usr/local/bin'
+                sh 'npm --version'
+                sh 'npm install'
+                sh 'npx cypress run --browser chrome || true'
             }
         }
     }
