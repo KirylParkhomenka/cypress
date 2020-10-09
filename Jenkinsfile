@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                     export PATH=/usr/local/bin
-                    npm install -g yarn
+                    npm install
                     npx cypress run --browser chrome || true
                 '''
             }
